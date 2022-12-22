@@ -1,4 +1,5 @@
 package pageObject;
+
 import basic.Registration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -51,18 +52,23 @@ public class HomePage {
     public void clickEnterAccountButton() {
         driver.findElement(enterAccountButton).click();
     }
+
     public void clickPersonalRoomButton() {
         driver.findElement(personalRoomButton).click();
     }
+
     public void clickConstructionButton() {
         driver.findElement(constructionButton).click();
     }
+
     public boolean takeOrderButtonIsDisplayed() {
-            return driver.findElement(takeOrderButton).isDisplayed();
+        return driver.findElement(takeOrderButton).isDisplayed();
     }
+
     public boolean makeBurgerTextIsDisplayed() {
         return driver.findElement(makeBurgerText).isDisplayed();
     }
+
     public void clickLogo() {
         driver.findElement(clickLogo).click();
     }
@@ -70,9 +76,11 @@ public class HomePage {
     public void clickLinkBuns() {
         driver.findElement(linkBuns).click();
     }
+
     public void clickLinkSouse() {
         driver.findElement(linkSouse).click();
     }
+
     public void clickLinkFills() {
         driver.findElement(linkFills).click();
     }
@@ -80,9 +88,11 @@ public class HomePage {
     public boolean textBunsIsDisplayed() {
         return driver.findElement(textBuns).isDisplayed();
     }
+
     public boolean textSouseIsDisplayed() {
         return driver.findElement(textSouse).isDisplayed();
     }
+
     public boolean textFillsIsDisplayed() {
         return driver.findElement(textFills).isDisplayed();
     }

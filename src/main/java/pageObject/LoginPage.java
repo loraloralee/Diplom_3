@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class LoginPage {
 
-    private final WebDriver driver ;
+    private final WebDriver driver;
 
 
     //Поле "Email"
@@ -28,6 +28,7 @@ public class LoginPage {
     //Ссылка "Восстановить пароль"
     private final By linkRestorePassword = By.xpath(".//a[text()='Восстановить пароль']");
 
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -37,32 +38,37 @@ public class LoginPage {
         fillEmailField(login.getEmail());
         fillPasswordField(login.getPassword());
     }
-    public void WaitForLoadPage(){
+
+    public void WaitForLoadPage() {
         new WebDriverWait(driver, Duration.ofSeconds(7));
-        ExpectedConditions.visibilityOfElementLocated(By.xpath(".//label[text()='Email']"));
+        ExpectedConditions.visibilityOfElementLocated(emailField);
     }
-    public void clickEmailField(){
+
+    public void clickEmailField() {
         driver.findElement(emailField).click();
     }
 
 
-    public void fillEmailField(String email){
+    public void fillEmailField(String email) {
         driver.findElement(emailField).sendKeys(email);
     }
 
-    public void fillPasswordField(String password){
+    public void fillPasswordField(String password) {
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    public void clickButtonEnter(){
+    public void clickButtonEnter() {
         driver.findElement(enterButton).click();
     }
+
     public void clickLinkRegister() {
         driver.findElement(linkRegistration).click();
     }
-    public void clickLinkRestorePassword(){
+
+    public void clickLinkRestorePassword() {
         driver.findElement(linkRestorePassword).click();
     }
+
     public boolean enterButtonIsDisplayed() {
         return driver.findElement(enterButton).isDisplayed();
     }

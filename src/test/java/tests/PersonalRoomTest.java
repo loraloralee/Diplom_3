@@ -11,6 +11,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
 
+import java.time.Duration;
+
 import pageObject.*;
 
 import java.util.concurrent.TimeUnit;
@@ -20,6 +22,7 @@ public class PersonalRoomTest {
     private HomePage homePage;
     private LoginPage loginPage;
     private PersonalRoomPage personalRoomPage;
+    Duration duration;
 
     @Before
 
@@ -27,7 +30,7 @@ public class PersonalRoomTest {
         WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "/Program Files/WebDriver/bin/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get(HomePage.URL);
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);

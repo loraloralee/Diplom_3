@@ -1,4 +1,5 @@
 package tests;
+
 import basic.Login;
 import basic.Registration;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -57,6 +58,7 @@ public class RegistrationTest {
         Assert.assertTrue(homePage.takeOrderButtonIsDisplayed());
 
     }
+
     @Test
     @DisplayName("Ошибка для некорректного пароля. Минимальный пароль — шесть символов.")
     public void checkInvalidPasswordTest() {
@@ -69,7 +71,8 @@ public class RegistrationTest {
 
         Assert.assertTrue(registrationPage.invalidPasswordMessageIsDisplayed());
     }
-   @After
+
+    @After
     public void tearDown() {
         driver.quit();
     }

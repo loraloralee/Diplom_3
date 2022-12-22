@@ -11,6 +11,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
 import pageObject.*;
+
 import java.util.concurrent.TimeUnit;
 
 public class LoginTest {
@@ -30,10 +31,10 @@ public class LoginTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get(HomePage.URL);
         homePage = new HomePage(driver);
-        loginPage=new LoginPage(driver);
-        registrationPage=new RegistrationPage(driver);
-        restorePasswordPage=new RestorePasswordPage(driver);
-        personalRoomPage=new PersonalRoomPage(driver);
+        loginPage = new LoginPage(driver);
+        registrationPage = new RegistrationPage(driver);
+        restorePasswordPage = new RestorePasswordPage(driver);
+        personalRoomPage = new PersonalRoomPage(driver);
 
     }
 
@@ -78,6 +79,7 @@ public class LoginTest {
         Assert.assertTrue(homePage.takeOrderButtonIsDisplayed());
 
     }
+
     @Test
     @DisplayName("Вход через кнопку в форме восстановления пароля.")
     public void checkLoginRestorePasswordPageTest() {

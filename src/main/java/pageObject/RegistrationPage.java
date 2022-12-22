@@ -31,26 +31,32 @@ public class RegistrationPage {
 
 
     public void fillRegistrationForm(Registration registration) {
-        fillNameField(registration.getName());;
+        fillNameField(registration.getName());
+        ;
         fillEmailField(registration.getEmail());
         fillPasswordField(registration.getPassword());
     }
 
-    public void fillNameField(String name){
+    public void fillNameField(String name) {
         driver.findElement(nameField).sendKeys(name);
     }
-    public void fillEmailField(String email){
+
+    public void fillEmailField(String email) {
         driver.findElement(emailField).sendKeys(email);
     }
-    public void fillPasswordField(String password){
+
+    public void fillPasswordField(String password) {
         driver.findElement(passwordField).sendKeys(password);
     }
-    public void clickRegisteredButton(){
+
+    public void clickRegisteredButton() {
         driver.findElement(registeredButton).click();
     }
-    public void clickLinkEnter(){
+
+    public void clickLinkEnter() {
         driver.findElement(linkEnter).click();
     }
+
     public boolean invalidPasswordMessageIsDisplayed() {
         return driver.findElement(invalidPasswordMessage).isDisplayed();
     }

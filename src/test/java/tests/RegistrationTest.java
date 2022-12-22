@@ -45,13 +45,12 @@ public class RegistrationTest {
     public void checkSuccessfulRegistrationTest() {
         homePage.clickEnterAccountButton();
         loginPage.clickLinkRegister();
-        registration = new Registration("Лера", "ppp2@mail.ru", "qqwwert");
+        registration = new Registration("Лера", "jlkqqq2@mail.ru", "qqwwert");
         registrationPage.fillRegistrationForm(registration);
         registrationPage.clickRegisteredButton();
 
-        new WebDriverWait(driver, Duration.ofSeconds(7));
-        ExpectedConditions.visibilityOfElementLocated(By.xpath(".//fieldset[1]/div/div/input"));
-        Login login = new Login("ppp2@mail.ru", "qqwwert");
+        loginPage.WaitForLoadPage();
+        Login login = new Login("jlkqqq2@mail.ru", "qqwwert");
         loginPage.fillLoginForm(login);
         loginPage.clickButtonEnter();
 

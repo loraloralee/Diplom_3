@@ -10,11 +10,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import pageObject.*;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class PersonalRoomTest {
@@ -36,13 +34,13 @@ public class PersonalRoomTest {
         personalRoomPage = new PersonalRoomPage(driver);
 
     }
+
     @Test
     @DisplayName("Переход в личный кабинет")
     public void checkEnterPersonalRoomTest() {
         homePage.clickEnterAccountButton();
 
-        new WebDriverWait(driver, Duration.ofSeconds(7));
-        ExpectedConditions.visibilityOfElementLocated(By.xpath(".//fieldset[1]/div/div/input"));
+        loginPage.WaitForLoadPage();
         Login login = new Login("lkj2@mail.ru", "qqwwert");
         loginPage.fillLoginForm(login);
         loginPage.clickButtonEnter();
@@ -74,8 +72,7 @@ public class PersonalRoomTest {
     public void checkExitFromPersonalRoomTest() {
         homePage.clickEnterAccountButton();
 
-        new WebDriverWait(driver, Duration.ofSeconds(7));
-        ExpectedConditions.visibilityOfElementLocated(By.xpath(".//fieldset[1]/div/div/input"));
+        loginPage.WaitForLoadPage();
         Login login = new Login("lkj2@mail.ru", "qqwwert");
         loginPage.fillLoginForm(login);
         loginPage.clickButtonEnter();

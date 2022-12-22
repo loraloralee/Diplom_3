@@ -3,6 +3,10 @@ package pageObject;
 import basic.Login;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
 
@@ -33,10 +37,15 @@ public class LoginPage {
         fillEmailField(login.getEmail());
         fillPasswordField(login.getPassword());
     }
-
+    public void WaitForLoadPage(){
+        new WebDriverWait(driver, Duration.ofSeconds(7));
+        ExpectedConditions.visibilityOfElementLocated(By.xpath(".//label[text()='Email']"));
+    }
     public void clickEmailField(){
         driver.findElement(emailField).click();
     }
+
+
     public void fillEmailField(String email){
         driver.findElement(emailField).sendKeys(email);
     }

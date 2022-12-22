@@ -13,11 +13,11 @@ public class LoginPage {
     private final WebDriver driver;
 
 
-    //Поле "Email"
+    //Поле "Email"By.name("name");
     private final By emailField = By.xpath(".//fieldset[1]/div/div/input");
 
     //Поле "Пароль"
-    private final By passwordField = By.xpath(".//fieldset[2]/div/div/input");
+    private final By passwordField = By.xpath(".//input[@type='password']");
 
     //Кнопка "Войти"
     private final By enterButton = By.xpath(".//button[text()='Войти']");
@@ -40,8 +40,8 @@ public class LoginPage {
     }
 
     public void WaitForLoadPage() {
-        new WebDriverWait(driver, Duration.ofSeconds(7));
-        ExpectedConditions.visibilityOfElementLocated(emailField);
+        new WebDriverWait(driver, Duration.ofSeconds(30));
+        ExpectedConditions.visibilityOfElementLocated(enterButton);
     }
 
     public void clickEmailField() {

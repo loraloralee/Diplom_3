@@ -8,13 +8,13 @@ public class RegistrationPage {
     private final WebDriver driver;
 
     //Поле "Имя"
-    private final By nameField = By.xpath(".//fieldset[1]/div/div/input");
+    private final By nameField = By.name("name");
 
     //Поле "Email"
     private final By emailField = By.xpath(".//fieldset[2]/div/div/input");
 
     //Поле "Пароль"
-    private final By passwordField = By.xpath(".//fieldset[3]/div/div/input");
+    private final By passwordField = By.xpath(".//input[@type='password']");
 
     //Кнопка "Зарегистрироваться"
     private final By registeredButton = By.xpath(".//button[text()='Зарегистрироваться']");

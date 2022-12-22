@@ -95,8 +95,8 @@ public class LoginTest {
         Assert.assertTrue(homePage.takeOrderButtonIsDisplayed());
     }
 
-    @After
+    /*@After
     public void tearDown() {
         driver.quit();
-    }
+    }*/
 }

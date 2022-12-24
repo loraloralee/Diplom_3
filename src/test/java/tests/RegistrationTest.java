@@ -46,12 +46,12 @@ public class RegistrationTest {
     public void checkSuccessfulRegistrationTest() {
         homePage.clickEnterAccountButton();
         loginPage.clickLinkRegister();
-        registration = new Registration("Лера", "uklko2@mail.ru", "qqwwert");
+        registration = new Registration("Лера", "pop2@mail.ru", "qqwwert");
         registrationPage.fillRegistrationForm(registration);
         registrationPage.clickRegisteredButton();
 
         loginPage.WaitForLoadPage();
-        Login login = new Login("uklo2@mail.ru", "qqwwert");
+        Login login = new Login("pop2@mail.ru", "qqwwert");
         loginPage.fillLoginForm(login);
         loginPage.WaitForLoadPage();
         loginPage.clickButtonEnter();
@@ -73,10 +73,10 @@ public class RegistrationTest {
         Assert.assertTrue(registrationPage.invalidPasswordMessageIsDisplayed());
     }
 
-  /*  @After
+    @After
     public void tearDown() {
         driver.quit();
-    }*/
+    }
 }
 
 

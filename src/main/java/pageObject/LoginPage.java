@@ -17,7 +17,7 @@ public class LoginPage {
     private final By emailField = By.xpath(".//fieldset[1]/div/div/input");
 
     //Поле "Пароль"
-    private final By passwordField = By.xpath(".//input[@type='password']");
+    private final By passwordField = By.xpath(".//fieldset[2]/div/div/input");
 
     //Кнопка "Войти"
     private final By enterButton = By.xpath(".//button[text()='Войти']");
@@ -40,7 +40,7 @@ public class LoginPage {
     }
 
     public void WaitForLoadPage() {
-        new WebDriverWait(driver, Duration.ofSeconds(30));
+        new WebDriverWait(driver, Duration.ofSeconds(10));
         ExpectedConditions.visibilityOfElementLocated(enterButton);
     }
 

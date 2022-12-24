@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import org.openqa.selenium.*;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
 import pageObject.*;
@@ -20,7 +20,6 @@ public class LoginTest {
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
     private RestorePasswordPage restorePasswordPage;
-    private PersonalRoomPage personalRoomPage;
 
     @Before
 
@@ -34,7 +33,6 @@ public class LoginTest {
         loginPage = new LoginPage(driver);
         registrationPage = new RegistrationPage(driver);
         restorePasswordPage = new RestorePasswordPage(driver);
-        personalRoomPage = new PersonalRoomPage(driver);
 
     }
 
@@ -95,8 +93,8 @@ public class LoginTest {
         Assert.assertTrue(homePage.takeOrderButtonIsDisplayed());
     }
 
-    /*@After
+    @After
     public void tearDown() {
         driver.quit();
-    }*/
+    }
 }

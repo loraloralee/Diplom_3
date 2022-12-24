@@ -8,13 +8,13 @@ public class RegistrationPage {
     private final WebDriver driver;
 
     //Поле "Имя"
-    private final By nameField = By.name("name");
+    private final By nameField = By.xpath(".//fieldset[1]/div/div/input");
 
     //Поле "Email"
     private final By emailField = By.xpath(".//fieldset[2]/div/div/input");
 
     //Поле "Пароль"
-    private final By passwordField = By.xpath(".//input[@type='password']");
+    private final By passwordField = By.xpath(".//fieldset[3]/div/div/input");
 
     //Кнопка "Зарегистрироваться"
     private final By registeredButton = By.xpath(".//button[text()='Зарегистрироваться']");
@@ -32,7 +32,6 @@ public class RegistrationPage {
 
     public void fillRegistrationForm(Registration registration) {
         fillNameField(registration.getName());
-        ;
         fillEmailField(registration.getEmail());
         fillPasswordField(registration.getPassword());
     }

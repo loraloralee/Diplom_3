@@ -47,6 +47,7 @@ public class LoginTest {
         loginPage.clickButtonEnter();
 
         Assert.assertTrue(homePage.takeOrderButtonIsDisplayed());
+
     }
 
     @Test

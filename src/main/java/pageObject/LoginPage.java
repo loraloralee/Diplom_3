@@ -37,6 +37,7 @@ public class LoginPage {
         clickEmailField();
         fillEmailField(login.getEmail());
         fillPasswordField(login.getPassword());
+
     }
 
     public void WaitForLoadPage() {
